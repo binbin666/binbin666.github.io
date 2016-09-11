@@ -2,15 +2,17 @@
 layout: default
 title: homepages
 ---
-<h2>语法参考文档:<a href="/2016-08-09-Jekyll-Liquid-doc.html">Jekyll/Liquid语法参考</a></h2>
-<br>
 <h2>{{ page.title }}</h2>
-　　<p>最新文章</p>
-　　<ul>
-　　　　{% for post in site.posts %}
-　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-　　　　{% endfor %}
-　　</ul>
+<h2>语法参考文档:<a href="/2016-08-09-Jekyll-Liquid-doc.html">Jekyll/Liquid语法参考</a></h2>
+<p>最新文章</p>
+<ul>
+　　{% for post in site.posts %}
+		<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　{% endfor %}
+</ul>
+<!-- <h2>语法参考文档:<a href="/2016-08-09-Jekyll-Liquid-doc.html">Jekyll/Liquid语法参考</a></h2>
+<br>
+
 <br>
 个人邮箱：<a href="mailto:{{ site.email }}">@iotcoder</a>
 <br>
@@ -18,4 +20,4 @@ title: homepages
 <br>
 QQ：156143422
 <br>
-Blog：<a href="http://wp.iotor.site">wp-blog</a>
+Blog：<a href="http://wp.iotor.site">wp-blog</a> -->
