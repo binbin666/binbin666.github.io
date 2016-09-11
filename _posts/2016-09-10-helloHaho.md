@@ -12,6 +12,6 @@ url:<a href="{{ site.url }}{{ post.url }}">123</a>
 <hr>
 url:<a href="{{ site.url }}{{ post }}">123</a>
 <hr>
-email: {{ site.email }}
+email: <a href="mailto:{{ site.email }}">rancho</a>
 <br>
 <p>haha123123123</p>
