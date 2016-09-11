@@ -1,0 +1,15 @@
+markdown: kramdown
+highlighter: rouge
+permalink: /news/:year/:month/:day/:title/
+
+timezone: Asis/Shanghai
+
+name: rancho • An interested coder
+description: Git blogs 
+url: https://binbin666.github.io
+
+logo: images/log@2x.png
+
+exclude:
+  - README.md
+  - .gitignore
