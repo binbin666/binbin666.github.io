@@ -8,7 +8,7 @@ title: homepages
 <p>最新文章</p>
 <ul>
 　　{% for post in site.posts %}
-		<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+		<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}" target="_blank">{{ post.title }}</a></li>
 　　{% endfor %}
 </ul>
 <hr>
@@ -18,11 +18,11 @@ title: homepages
 <br>
 <hr>
 <br>
-个人邮箱：<a href="mailto:{{ site.email }}">@iotcoder</a>
+个人邮箱：<a href="mailto:{{ site.email }}" target="_blank">@iotcoder</a>
 <br>
-新浪微博：<a href="http://weibo.com/echo404">@赖斌</a>
+新浪微博：<a href="http://weibo.com/echo404" target="_blank">@赖斌</a>
 <br>
 QQ：156143422
 <br>
-Blog：<a href="http://wp.iotor.site">wp-blog</a>
+Blog：<a href="http://wp.iotor.site" target="_blank">wp-blog</a>
 </div>
