@@ -8,3 +8,6 @@ title:	hello, Haho
 <p>Hahooooooooooooooooooooooo</p>
 <p> {{ page.date | date_to_string }} </p>
 <h2>{{ post.author }}`{{ post.url }}</h2>
+
+</body>
+</html>
