@@ -8,9 +8,9 @@ title:	hello, Haho
 <p> {{ page.date | date_to_string }} </p>
 <h2>author: {{ site.author }}</h2>
 <hr>
-url:<a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+url:<a href="{{ site.url }}{{ post.url }}">123</a>
 <hr>
-url:<a href="{{ site.url }}{{ post }}">{{ post }}</a>
+url:<a href="{{ site.url }}{{ post }}">123</a>
 <hr>
 email: {{ site.email }}
 <br>
