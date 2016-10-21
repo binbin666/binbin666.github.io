@@ -191,7 +191,7 @@ do
  if [ ! "$lastLine" == "--End of $fileName--" ]; then
    echo "--End of $fileName--" >> $fileName
  fi
-done <tmp #从临时文件进行输入重定向
+done < tmp #从临时文件进行输入重定向
 rm tmp #删除临时文件
 '''
 #### 清单 9. 不使用临时文件
