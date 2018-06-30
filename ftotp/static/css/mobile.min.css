@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+html,body,div,ul,li,a,img,h3,object,p {
+	padding: 0;
+	margin: 0
+}
+
+ul,li {
+	list-style: none
+}
+
+html,body {
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	height: 100%;
+	font: 80% "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB",宋体,sans-serif;
+	min-width: 320px;
+	background-color: #fff8f8
+}
+
+.w-50 {
+	width: 50%
+}
+
+.w-55 {
+	width: 55%
+}
+
+.w-80,.show-img,.show-img-iPad {
+	width: 80%
+}
+
+.w-100 {
+	width: 100%
+}
+
+.overflow-y {
+	overflow-y: hidden
+}
+
+.bg,.bg-iPad {
+	text-align: center;
+	background: url("//activity.hdslb.com/zzjs/20160608appDownload/img/mobile/bg.png") center no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover
+}
+
+.bg-iPad {
+	background-image: url("//activity.hdslb.com/zzjs/20160608appDownload/img/mobile/bg-ipadHD.png")
+}
+
+.title {
+	margin-top: 5rem;
+	width: 80%
+}
+
+.btn-download,.btn-download-iPad {
+	display: inline-block;
+	margin: 3rem 0 4rem;
+	width: 60%
+}
+
+.btn-download-iPad {
+	margin: 35px 0
+}
+
+.btn-margin {
+	margin: 3rem 0 1rem
+}
+
+.btn-concept-margin {
+	margin: 0 0 2rem
+}
+
+.show-img,.show-img-iPad {
+	display: inline-block;
+	margin-bottom: 14px
+}
+
+.show-img-iPad {
+	width: 95%;
+	margin-bottom: 0
+}

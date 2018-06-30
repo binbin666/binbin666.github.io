@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="shortcut icon" href="./static/imgs/favicon.ico" />
+	<link rel="bookmark" href="./static/imgs/favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="renderer" content="webkit" />
+	<link rel="stylesheet" href="./static/css/index-pc.css" />
+	<!--script type="text/javascript" src="./static/js/jquery.min.js"></script-->
+    <title>欢迎使用 OTPMobileToken</title>
+    
+  </head>
+  
+  <body>
+	<script type="text/javascript">
+		function request(paras) {
+			var url = location.href;
+			var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+			var paraObj = {};
+			for (var i = 0; j = paraString[i]; i++) {
+			  paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+			}
+			var returnValue = paraObj[paras.toLowerCase()];
+			if (typeof(returnValue) == "undefined") {
+			  return "";
+			} else {
+			  return returnValue;
+			}
+		}
+		// 获取终端的相关信息
+		var Terminal = {
+			// 辨别移动终端类型
+			platform: function() {
+			  var u = navigator.userAgent,
+			  app = navigator.appVersion;
+			  return {
+				//微信
+				weixin: u.toLowerCase().indexOf("micromessenger") > -1,
+				// 是否为iPhone或者QQHD浏览器
+				iPhone: u.indexOf('iPhone') > -1,
+				// 是否iPad
+				iPad: u.indexOf('iPad') > -1,
+				// android终端或者uc浏览器
+				android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+				// 是否WinPhone
+				wp: u.indexOf('Windows Phone') > -1
+			  };
+			} (),
+			whichSyStem: function() {
+			  var ua = navigator.userAgent;
+			  var pf = navigator.platform;
+			  if (/Mac/.test(pf)) {
+				return "Mac";
+			  }
+			  if (/X11/.test(pf) || /Linux/.test(pf)) {
+				return "Linux";
+			  }
+			  if (/Win/.test(pf) || /ARM/.test(pf)) {
+				if (/Windows NT (\d+\.\d+)/.test(ua) || /Windows Phone (\d+\.\d+)/.test(ua)) {
+				  switch (RegExp["$1"]) {
+				  case "5.0":
+					return "Windows 2000";
+				  case "5.1":
+					return "Windows XP";
+				  case "6.0":
+					return "Windows Vista";
+				  case "6.1":
+					return "Windows 7";
+				  case "6.2":
+					return "Windows 8";
+				  case "6.3":
+					return "Windows 8.1";
+				  case "6.4":
+				  case "10.0":
+					return "Windows 10";
+				  }
+				}
+			  }
+			} ()
+		};
+
+		var channelFrom = request('channel') == null ? "": request('channel');
+		// 根据不同的终端，跳转到不同的地址
+		if (Terminal.platform.android) { // Android
+			if (channelFrom == "tieba") {
+			  location.href = "./static/app/OTPMobile-v2.0-20141215.apk";
+			} else {
+			  location.href = './android.html';
+			} 
+		} else if (Terminal.platform.iPhone) { // iPhone
+			location.href = './iphone.html';
+		} 
+	</script>
+	<!--头部-->
+	<div class="header-wrap">
+		<div class="head-content">
+			<div class="device-type-select">
+				<p class="welpage-title">欢迎下载动态令牌 APP</p><p class="welpage-content"> OTP Mobile Token</p>
+				<div class="dt-content">
+					<img src="./static/imgs/ftotp_qrcode.png" alt="">
+					<div class="dt-choose">
+						<a href="./static/app/OTPMobile-v3-20180606.apk" class="btn-android bg-android active" title="安卓版"></a>
+						<a href="https://itunes.apple.com/cn/app/otp-mobile-token/id952152059" target="_blank" class="btn-iPhone bg-iPhone" title="iPhone版"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+
+</html>
